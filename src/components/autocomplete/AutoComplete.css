@@ -1,0 +1,207 @@
+.react-tags {
+  position: relative;
+  padding: 10px;
+  border: 1px solid #d1d1d1;
+  border-radius: 1px;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+
+  /* shared font styles */
+  font-size: 1em;
+  line-height: 1.2;
+
+  /* clicking anywhere will focus the input */
+  cursor: text;
+}
+
+.react-tags.is-focused {
+  border-color: #b1b1b1;
+}
+
+.react-tags__selected {
+  /* min-height: 25px; */
+  overflow: auto;
+
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #d9d9d9;
+    border-radius: 5px;
+  }
+}
+
+.react-tags__selected.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+/*
+.react-tags__selected-tag {
+  display: inline-block;
+  box-sizing: border-box;
+  margin: 0 6px 6px 0;
+  padding: 6px 8px;
+  border: 1px solid #d1d1d1;
+  border-radius: 2px;
+  background: #f1f1f1;
+
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.react-tags__selected-tag:after {
+  content: "\2715";
+  color: #aaa;
+  margin-left: 8px;
+}
+
+.react-tags__selected-tag:hover,
+.react-tags__selected-tag:focus {
+  border-color: #b1b1b1;
+}
+*/
+
+.react-tags__search {
+  width: 100%;
+  display: inline-block;
+  position: static;
+
+  /* match tag layout */
+  /* padding: 7px 2px; */
+  /* margin-bottom: 6px; */
+
+  /* prevent autoresize overflowing the container */
+  /* max-width: 100%; */
+}
+
+.react-tags__search-input {
+  /* prevent autoresize overflowing the container */
+  max-width: 100%;
+
+  /* remove styles and layout from this element */
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+
+  /* match the font styles */
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.react-tags__search-input::-ms-clear {
+  display: none;
+}
+
+/* .row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+} */
+
+.react-tags__selected-tag {
+  width: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  height: auto;
+  flex-shrink: 0;
+  border-radius: 5px;
+  border: 1px solid #dcdddd !important;
+  background: #fff;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+.react-tags__selected-tag > div {
+  color: #000;
+  font-size: 12px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+}
+
+.react-tags__selected-tag:after {
+  content: "\2715";
+  color: #aaa;
+  margin-left: 8px;
+}
+
+.react-tags__search-wrapper {
+  position: relative;
+}
+
+.react-tags__suggestions {
+  position: absolute;
+  /* bottom: -50px; */
+  left: 0 !important;
+  z-index: 1;
+  width: 100% !important;
+  list-style-type: none;
+  margin-block-start: 10px;
+}
+
+.react-tags__suggestions > ul {
+  padding: 0;
+  background: white;
+  border: 1px solid #d1d1d1;
+  border-radius: 2px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  box-sizing: border-box;
+}
+
+.react-tags__suggestions li {
+  list-style: none;
+  position: relative;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  padding: 0 5px;
+  width: 100% !important;
+  cursor: pointer;
+}
+
+.react-tags__suggestions li > .suggest-container {
+  width: 100%;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.react-tags__suggestions li > .suggest-container > .avatar {
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+}
+
+.react-tags__suggestions li > .suggest-container > .text {
+  /* width: auto;
+  max-width: calc(100% - 110px); */
+  flex: 1;
+  align-items: center;
+  font-weight: bold;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.react-tags__suggestions li > .suggest-container > .invite {
+  width: 30px;
+  display: flex;
+  align-items: center;
+}
+
+.react-tags__suggestions li > .suggest-container > .invite::after {
+  content: "\002B";
+  font-size: 20px;
+}
+
+.react-tags__suggestions li.is-active {
+  background-color: gainsboro;
+}

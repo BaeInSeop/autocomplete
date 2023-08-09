@@ -1,0 +1,49 @@
+.avatar-container {
+  width: 50px;
+  height: 50px;
+  color: white;
+  display: inline-block;
+  text-align: center;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  user-select: none;
+}
+
+.avatar-container > img {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+}
+
+.skeleton {
+  width: 50px;
+  height: 50px;
+  background: gainsboro;
+  display: inline-block;
+  min-width:25px;
+  position:relative;
+  top:2px;
+}
+
+.skeleton-progress {
+  width: 50%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: skewX(-20deg);
+  box-shadow: 0 0 30px 30px rgba(255, 255, 255, 0.05);
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% {
+    transform: translateX(-150%);
+  }
+  50% {
+    transform: translateX(-60%);
+  }
+  100% {
+    transform: translate(150%);
+  }
+}
